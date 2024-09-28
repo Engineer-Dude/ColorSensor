@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 
 namespace ColorSensor
 {
@@ -28,17 +27,19 @@ namespace ColorSensor
             TextBlock blueValue = Template.FindName("PART_BlueValue", this) as TextBlock ?? new TextBlock();
             TextBlock whiteValue = Template.FindName("PART_WhiteValue", this) as TextBlock ?? new TextBlock();
 
-            Binding showValueBinding = new Binding
-            {
-                Path = new PropertyPath(nameof(ShowValue)),
-                Source = this,
-                Converter = new BooleanToVisibilityConverter()
-            };
+            // Alternate way to implement Binding (compared to using TemplateBinding)
 
-            redValue.SetBinding(VisibilityProperty, showValueBinding);
-            greenValue.SetBinding(VisibilityProperty, showValueBinding);
-            blueValue.SetBinding(VisibilityProperty, showValueBinding);
-            whiteValue.SetBinding(VisibilityProperty, showValueBinding);
+            //Binding showValueBinding = new Binding
+            //{
+            //    Path = new PropertyPath(nameof(ShowValue)),
+            //    Source = this,
+            //    Converter = new BooleanToVisibilityConverter()
+            //};
+
+            //redValue.SetBinding(VisibilityProperty, showValueBinding);
+            //greenValue.SetBinding(VisibilityProperty, showValueBinding);
+            //blueValue.SetBinding(VisibilityProperty, showValueBinding);
+            //whiteValue.SetBinding(VisibilityProperty, showValueBinding);
 
             base.OnApplyTemplate();
         }

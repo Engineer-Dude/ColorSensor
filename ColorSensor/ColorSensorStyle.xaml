@@ -10,6 +10,11 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                 </Border>-->
+                    
+                    <ControlTemplate.Resources>
+                        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+                    </ControlTemplate.Resources>
+                    
                     <Border BorderBrush="Black" BorderThickness="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -25,7 +30,7 @@
                             </Grid.RowDefinitions>
 
                             <Label Content="Red" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="PART_RedValue" Text="RedValue" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                            <TextBlock x:Name="PART_RedValue"  Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" Text="RedValue" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
 
                             <Label Content="Green" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
                             <TextBlock x:Name="PART_GreenValue" Text="GreenValue" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" />
