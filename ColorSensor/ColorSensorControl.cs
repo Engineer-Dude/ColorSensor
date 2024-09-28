@@ -15,6 +15,15 @@ namespace ColorSensor
         public static readonly DependencyProperty ShowValueProperty =
             DependencyProperty.Register("ShowValue", typeof(bool), typeof(ColorSensorControl), new PropertyMetadata(true));
 
+        public int RedValue
+        {
+            get { return (int)GetValue(RedValueProperty); }
+            set { SetValue(RedValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty RedValueProperty =
+            DependencyProperty.Register("RedValue", typeof(int), typeof(ColorSensorControl), new PropertyMetadata(0));
+
         static ColorSensorControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColorSensorControl), new FrameworkPropertyMetadata(typeof(ColorSensorControl)));

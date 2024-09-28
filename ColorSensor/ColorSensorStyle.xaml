@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ColorSensor">
-    
+
     <Style TargetType="{x:Type local:ColorSensorControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -30,7 +30,7 @@
                             </Grid.RowDefinitions>
 
                             <Label Content="Red" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="PART_RedValue"  Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" Text="RedValue" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                            <TextBlock x:Name="PART_RedValue"  Text="{Binding RedValue}" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
 
                             <Label Content="Green" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
                             <TextBlock x:Name="PART_GreenValue" Text="GreenValue" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" />
