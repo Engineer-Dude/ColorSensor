@@ -13,16 +13,22 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
-        <local:ColorSensorControl Grid.Row="0" Grid.Column="0" Margin="5" ShowValue="True" RedValue="{Binding RedValue}"/>
+        <local:ColorSensorControl Grid.Row="0" Grid.Column="0" Margin="5" ShowValue="True" RedValue="{Binding RedValue}" ColorSensorValuesChanged="ColorSensorControl_ColorSensorValuesChanged"/>
         <local:ColorSensorControl Grid.Row="0" Grid.Column="1" Margin="5" ShowValue="False"/>
         <local:ColorSensorControl Grid.Row="1" Grid.Column="0" Margin="5"/>
         <local:ColorSensorControl Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Label Content="Red" VerticalAlignment="Center"/>
+            <TextBlock x:Name="RedValue" VerticalAlignment="Center"/>
+        </StackPanel>
         
     </Grid>
 </Window>
