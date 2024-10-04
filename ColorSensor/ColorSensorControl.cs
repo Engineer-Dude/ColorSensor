@@ -77,8 +77,23 @@ namespace ColorSensor
         protected void OnColorSensorValuesChanged(int redValue, int greenValue, int blueValue, int whiteValue)
         {
             UpdateColorSensorValues(redValue, greenValue, blueValue, whiteValue);
+
+            UpdateColorSensorIndicators(redValue, greenValue, blueValue, whiteValue);
+
             RaiseEvent(new ColorSensorValuesChangedEventArgs(routedEvent: ColorSensorValuesChangedEvent, source: this)
             { RedValue = redValue, GreenValue = greenValue, BlueValue = blueValue, WhiteValue = whiteValue });
+        }
+
+        private void UpdateColorSensorIndicators(int redValue, int greenValue, int blueValue, int whiteValue)
+        {
+            if (redValue > 30)
+            {
+                VisualStateManager.GoToState(control: this, stateName: "RedIndicatorOn", useTransitions: true);
+            }
+            else
+            {
+                VisualStateManager.GoToState(control: this, stateName: "RedIndicatorOff", useTransitions: true);
+            }
         }
 
         private void UpdateColorSensorValues(int redValue, int greenValue, int blueValue, int whiteValue)
