@@ -6,9 +6,7 @@
         xmlns:local="clr-namespace:ColorSensor"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <local:MainWindowViewModel/>
-    </Window.DataContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="130"/>
@@ -20,7 +18,7 @@
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
-        <local:ColorSensorControl Grid.Row="0" Grid.Column="0" Margin="5" ShowValue="True" RedValue="{Binding RedValue}" ColorSensorValuesChanged="ColorSensorControl_ColorSensorValuesChanged"/>
+        <local:ColorSensorControl Grid.Row="0" Grid.Column="0" Margin="5" ShowValue="True" ColorSensorValuesChanged="ColorSensorControl_ColorSensorValuesChanged"/>
         <local:ColorSensorControl Grid.Row="0" Grid.Column="1" Margin="5" ShowValue="False"/>
         <local:ColorSensorControl Grid.Row="1" Grid.Column="0" Margin="5"/>
         <local:ColorSensorControl Grid.Row="1" Grid.Column="1" Margin="5"/>
