@@ -32,19 +32,19 @@
 
                             <Ellipse Width="10" Height="10" Fill="Red" Stroke="Black" StrokeThickness="1" Grid.Row="0" Grid.Column="0" Margin="2"/>
                             <Label Content="Red" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="PART_RedValue"  Text="{Binding RedValue}" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
+                            <TextBlock x:Name="PART_RedValue"  Text="" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
 
                             <Ellipse Width="10" Height="10" Fill="Green" Stroke="Black" StrokeThickness="1" Grid.Row="1" Grid.Column="0" Margin="2"/>
                             <Label Content="Green" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="PART_GreenValue" Text="GreenValue" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" />
+                            <TextBlock x:Name="PART_GreenValue" Text="" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" />
 
                             <Ellipse Width="10" Height="10" Fill="Blue" Stroke="Black" StrokeThickness="1" Grid.Row="2" Grid.Column="0" Margin="2"/>
                             <Label Content="Blue" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="PART_BlueValue" Text="BlueValue" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" />
+                            <TextBlock x:Name="PART_BlueValue" Text="" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" />
 
                             <Ellipse Width="10" Height="10" Fill="White" Stroke="Black" StrokeThickness="1" Grid.Row="3" Grid.Column="0" Margin="2"/>
                             <Label Content="White" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="PART_WhiteValue" Text="WhiteValue" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" />
+                            <TextBlock x:Name="PART_WhiteValue" Text="" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" />
 
                         </Grid>
                     </Border>
