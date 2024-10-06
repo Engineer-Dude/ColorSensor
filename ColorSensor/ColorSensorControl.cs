@@ -4,6 +4,14 @@ using System.Windows.Threading;
 
 namespace ColorSensor
 {
+    [TemplateVisualState(GroupName = "LightModeStates", Name = "Light")]
+    [TemplateVisualState(GroupName = "LightModeStates", Name = "Dark")]
+
+    [TemplatePart(Name = "PART_RedValue", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_GreenValue", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_BlueValue", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_WhiteValue", Type = typeof(TextBlock))]
+
     public class ColorSensorControl : Control
     {
         public bool ShowValue
