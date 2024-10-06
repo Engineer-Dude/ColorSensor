@@ -10,23 +10,27 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                 </Border>-->
-                    
+
                     <ControlTemplate.Resources>
                         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
                     </ControlTemplate.Resources>
-                    
-                    <Border BorderBrush="Black" BorderThickness="1">
+
+                    <Border BorderThickness="1">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BorderBrush" Color="DarkGray"/>
+                        </Border.Background>
 
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="ColorSensorIndicatorStates">
-                                <VisualState x:Name="RedIndicatorOn">
+                            <VisualStateGroup x:Name="LightModeStates">
+                                <VisualState x:Name="Light">
                                     <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="RedIndicatorFill" Storyboard.TargetProperty="Color" To="Red" Duration="0:0:0.1"/>
+                                        <ColorAnimation Storyboard.TargetName="BorderBrush" Storyboard.TargetProperty="Color" To="LightGray" Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState x:Name="RedIndicatorOff">
+
+                                <VisualState x:Name="Dark">
                                     <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="RedIndicatorFill" Storyboard.TargetProperty="Color" To="Black" Duration="0:0:0.1"/>
+                                        <ColorAnimation Storyboard.TargetName="BorderBrush" Storyboard.TargetProperty="Color" To="DarkGray" Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -46,12 +50,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
-                            <Ellipse x:Name="PART_RedIndicator" Width="10" Height="10" Stroke="Black" StrokeThickness="1" Grid.Row="0" Grid.Column="0" Margin="2">
-                                <Ellipse.Fill>
-                                    <SolidColorBrush x:Name="RedIndicatorFill" Color="White"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-
+                            <Ellipse x:Name="PART_RedIndicator" Width="10" Height="10" Fill="Red" Stroke="Black" StrokeThickness="1" Grid.Row="0" Grid.Column="0" Margin="2"/>
                             <Label Content="Red" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
                             <TextBlock x:Name="PART_RedValue"  Text="" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
 

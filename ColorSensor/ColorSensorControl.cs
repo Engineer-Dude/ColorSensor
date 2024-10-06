@@ -12,7 +12,6 @@ namespace ColorSensor
             set { SetValue(ShowValueProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for ShowValue.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ShowValueProperty =
             DependencyProperty.Register("ShowValue", typeof(bool), typeof(ColorSensorControl), new PropertyMetadata(true));
 
@@ -28,6 +27,22 @@ namespace ColorSensor
         {
             add { AddHandler(ColorSensorValuesChangedEvent, value); }
             remove { RemoveHandler(ColorSensorValuesChangedEvent, value); }
+        }
+
+        public bool LightMode
+        {
+            get { return (bool)GetValue(LightModeProperty); }
+            set { SetValue(LightModeProperty, value); }
+        }
+
+        public static readonly DependencyProperty LightModeProperty =
+            DependencyProperty.Register("LightMode", typeof(bool), typeof(ColorSensorControl), new PropertyMetadata(
+                defaultValue: true, propertyChangedCallback: OnLightModeChanged));
+
+        private static void OnLightModeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ColorSensorControl control = ((ColorSensorControl)d);
+            bool success = VisualStateManager.GoToState(control: control, stateName: (bool)e.NewValue ? "Light" : "Dark", useTransitions: true);
         }
 
         static ColorSensorControl()
@@ -78,22 +93,8 @@ namespace ColorSensor
         {
             UpdateColorSensorValues(redValue, greenValue, blueValue, whiteValue);
 
-            UpdateColorSensorIndicators(redValue, greenValue, blueValue, whiteValue);
-
             RaiseEvent(new ColorSensorValuesChangedEventArgs(routedEvent: ColorSensorValuesChangedEvent, source: this)
             { RedValue = redValue, GreenValue = greenValue, BlueValue = blueValue, WhiteValue = whiteValue });
-        }
-
-        private void UpdateColorSensorIndicators(int redValue, int greenValue, int blueValue, int whiteValue)
-        {
-            if (redValue > 30)
-            {
-                VisualStateManager.GoToState(control: this, stateName: "RedIndicatorOn", useTransitions: true);
-            }
-            else
-            {
-                VisualStateManager.GoToState(control: this, stateName: "RedIndicatorOff", useTransitions: true);
-            }
         }
 
         private void UpdateColorSensorValues(int redValue, int greenValue, int blueValue, int whiteValue)
