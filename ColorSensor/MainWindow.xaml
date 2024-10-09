@@ -9,14 +9,14 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
         <local:ColorSensorControl Grid.Row="0" Grid.Column="0" Margin="5" 
