@@ -55,42 +55,54 @@
                             <Ellipse x:Name="PART_RedIndicator" 
                                      Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
                                      Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
-                                     Fill="Red" Stroke="Black" StrokeThickness="1" Grid.Row="0" Grid.Column="0" 
+                                     Fill="Red" Stroke="Black" StrokeThickness="1" 
+                                     Grid.Row="0" Grid.Column="0" 
                                      Margin="2" VerticalAlignment="Center"/>
-                            <Label Content="Red" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="2"
+                            <Label Content="Red" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_RedIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_RedValue"  Text=""
-                                       FontSize="{Binding ActualHeight, ElementName=PART_RedIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
+                                       FontSize="{Binding ActualHeight, ElementName=PART_RedIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
+                                       Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                       VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
 
                             <Ellipse x:Name="PART_GreenIndicator" 
                                      Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
                                      Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
-                                     Fill="Green" Stroke="Black" StrokeThickness="1" Grid.Row="1" Grid.Column="0" 
+                                     Fill="Green" Stroke="Black" StrokeThickness="1" 
+                                     Grid.Row="1" Grid.Column="0" 
                                      Margin="2" VerticalAlignment="Center"/>
-                            <Label Content="Green" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="2"
+                            <Label Content="Green" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_GreenIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_GreenValue"  Text=""
-                                       FontSize="{Binding ActualHeight, ElementName=PART_GreenIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+                                       FontSize="{Binding ActualHeight, ElementName=PART_GreenIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
+                                       Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                       VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
 
                             <Ellipse x:Name="PART_BlueIndicator" 
                                      Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
                                      Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
-                                     Fill="Blue" Stroke="Black" StrokeThickness="1" Grid.Row="2" Grid.Column="0" 
+                                     Fill="Blue" Stroke="Black" StrokeThickness="1" 
+                                     Grid.Row="2" Grid.Column="0" 
                                      Margin="2" VerticalAlignment="Center"/>
-                            <Label Content="Blue" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="2"
+                            <Label Content="Blue" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_BlueIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_BlueValue"  Text=""
-                                       FontSize="{Binding ActualHeight, ElementName=PART_BlueIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2"/>
+                                       FontSize="{Binding ActualHeight, ElementName=PART_BlueIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
+                                       Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                       VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
 
                             <Ellipse x:Name="PART_WhiteIndicator" 
                                      Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
                                      Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
-                                     Fill="White" Stroke="Black" StrokeThickness="1" Grid.Row="3" Grid.Column="0" 
+                                     Fill="White" Stroke="Black" StrokeThickness="1" 
+                                     Grid.Row="3" Grid.Column="0" 
                                      Margin="2" VerticalAlignment="Center"/>
-                            <Label Content="White" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Margin="2"
+                            <Label Content="White" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_WhiteIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_WhiteValue"  Text=""
-                                       FontSize="{Binding ActualHeight, ElementName=PART_WhiteIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3"/>
+                                       FontSize="{Binding ActualHeight, ElementName=PART_WhiteIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
+                                       Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                       VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
 
                         </Grid>
                     </Border>
