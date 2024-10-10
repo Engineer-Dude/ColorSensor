@@ -15,6 +15,7 @@
                     <ControlTemplate.Resources>
                         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
                         <converters:ValueDivisionConverter x:Key="ValueDivisionConverter"/>
+                        <converters:GreaterThanMultiValueConverter x:Key="GreaterThanMultiValueConverter"/>
                     </ControlTemplate.Resources>
 
                     <Border x:Name="TheBorder" BorderThickness="1">
@@ -52,12 +53,42 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
 
-                            <Ellipse x:Name="PART_RedIndicator" 
+                            <!--<Ellipse x:Name="PART_RedIndicator" 
                                      Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
                                      Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
                                      Fill="Red" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="0" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center"/>
+                                     Margin="2" VerticalAlignment="Center"/>-->
+
+                            <Ellipse x:Name="PART_RedIndicator" 
+                                     Fill="Red" Stroke="Black" StrokeThickness="1" 
+                                     Grid.Row="0" Grid.Column="0" 
+                                     Margin="2" VerticalAlignment="Center">
+
+                                <Ellipse.Style>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Width" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Setter Property="Height" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Value="True">
+                                                <DataTrigger.Binding>
+                                                    <MultiBinding Converter="{StaticResource GreaterThanMultiValueConverter}">
+                                                        <MultiBinding.Bindings>
+                                                            <Binding Path="ActualHeight" ElementName="TheBorder"/>
+                                                            <Binding Path="ActualWidth" ElementName="TheBorder"/>
+                                                        </MultiBinding.Bindings>
+                                                    </MultiBinding>
+                                                </DataTrigger.Binding>
+                                                <DataTrigger.Setters>
+                                                    <Setter Property="Width" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                    <Setter Property="Height" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                </DataTrigger.Setters>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Ellipse.Style>
+                            </Ellipse>
+
                             <Label Content="Red" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_RedIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_RedValue"  Text=""
@@ -66,11 +97,35 @@
                                        VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
 
                             <Ellipse x:Name="PART_GreenIndicator" 
-                                     Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
-                                     Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
                                      Fill="Green" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="1" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center"/>
+                                     Margin="2" VerticalAlignment="Center">
+
+                                <Ellipse.Style>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Width" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Setter Property="Height" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Value="True">
+                                                <DataTrigger.Binding>
+                                                    <MultiBinding Converter="{StaticResource GreaterThanMultiValueConverter}">
+                                                        <MultiBinding.Bindings>
+                                                            <Binding Path="ActualHeight" ElementName="TheBorder"/>
+                                                            <Binding Path="ActualWidth" ElementName="TheBorder"/>
+                                                        </MultiBinding.Bindings>
+                                                    </MultiBinding>
+                                                </DataTrigger.Binding>
+                                                <DataTrigger.Setters>
+                                                    <Setter Property="Width" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                    <Setter Property="Height" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                </DataTrigger.Setters>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Ellipse.Style>
+                            </Ellipse>
+
+
                             <Label Content="Green" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_GreenIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_GreenValue"  Text=""
@@ -79,11 +134,33 @@
                                        VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
 
                             <Ellipse x:Name="PART_BlueIndicator" 
-                                     Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
-                                     Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
                                      Fill="Blue" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="2" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center"/>
+                                     Margin="2" VerticalAlignment="Center">
+
+                                <Ellipse.Style>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Width" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Setter Property="Height" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Value="True">
+                                                <DataTrigger.Binding>
+                                                    <MultiBinding Converter="{StaticResource GreaterThanMultiValueConverter}">
+                                                        <MultiBinding.Bindings>
+                                                            <Binding Path="ActualHeight" ElementName="TheBorder"/>
+                                                            <Binding Path="ActualWidth" ElementName="TheBorder"/>
+                                                        </MultiBinding.Bindings>
+                                                    </MultiBinding>
+                                                </DataTrigger.Binding>
+                                                <DataTrigger.Setters>
+                                                    <Setter Property="Width" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                    <Setter Property="Height" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                </DataTrigger.Setters>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Ellipse.Style>
+                            </Ellipse>
                             <Label Content="Blue" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_BlueIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_BlueValue"  Text=""
@@ -92,11 +169,33 @@
                                        VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
 
                             <Ellipse x:Name="PART_WhiteIndicator" 
-                                     Width="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}" 
-                                     Height="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"
                                      Fill="White" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="3" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center"/>
+                                     Margin="2" VerticalAlignment="Center">
+
+                                <Ellipse.Style>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Width" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Setter Property="Height" Value="{Binding ActualWidth, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Value="True">
+                                                <DataTrigger.Binding>
+                                                    <MultiBinding Converter="{StaticResource GreaterThanMultiValueConverter}">
+                                                        <MultiBinding.Bindings>
+                                                            <Binding Path="ActualHeight" ElementName="TheBorder"/>
+                                                            <Binding Path="ActualWidth" ElementName="TheBorder"/>
+                                                        </MultiBinding.Bindings>
+                                                    </MultiBinding>
+                                                </DataTrigger.Binding>
+                                                <DataTrigger.Setters>
+                                                    <Setter Property="Width" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                    <Setter Property="Height" Value="{Binding ActualHeight, ElementName=TheBorder, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=10}"/>
+                                                </DataTrigger.Setters>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Ellipse.Style>
+                            </Ellipse>
                             <Label Content="White" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="2"
                                      FontSize="{Binding ActualHeight, ElementName=PART_WhiteIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
                             <TextBlock x:Name="PART_WhiteValue"  Text=""
