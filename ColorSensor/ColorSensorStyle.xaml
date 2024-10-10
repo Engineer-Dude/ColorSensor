@@ -18,7 +18,7 @@
                         <converters:GreaterThanMultiValueConverter x:Key="GreaterThanMultiValueConverter"/>
                     </ControlTemplate.Resources>
 
-                    <Border x:Name="TheBorder" BorderThickness="1">
+                    <Border x:Name="TheBorder" BorderThickness="1" Padding="5">
                         <Border.Background>
                             <SolidColorBrush x:Name="BorderBrush" Color="DarkGray"/>
                         </Border.Background>
@@ -63,7 +63,7 @@
                             <Ellipse x:Name="PART_RedIndicator" 
                                      Fill="Red" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="0" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center">
+                                     Margin="10,0" VerticalAlignment="Center">
 
                                 <Ellipse.Style>
                                     <Style TargetType="Ellipse">
@@ -89,9 +89,9 @@
                                 </Ellipse.Style>
                             </Ellipse>
 
-                            <Label Content="Red" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="2"
+                            <Label Content="Red" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Padding="0"
                                      FontSize="{Binding ActualHeight, ElementName=PART_RedIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
-                            <TextBlock x:Name="PART_RedValue"  Text=""
+                            <TextBlock x:Name="PART_RedValue"  Text="" Padding="10,0"
                                        FontSize="{Binding ActualHeight, ElementName=PART_RedIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
                                        Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
                                        VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
@@ -99,7 +99,7 @@
                             <Ellipse x:Name="PART_GreenIndicator" 
                                      Fill="Green" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="1" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center">
+                                     Margin="10,0" VerticalAlignment="Center">
 
                                 <Ellipse.Style>
                                     <Style TargetType="Ellipse">
@@ -126,9 +126,9 @@
                             </Ellipse>
 
 
-                            <Label Content="Green" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="2"
+                            <Label Content="Green" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Padding="0"
                                      FontSize="{Binding ActualHeight, ElementName=PART_GreenIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
-                            <TextBlock x:Name="PART_GreenValue"  Text=""
+                            <TextBlock x:Name="PART_GreenValue"  Text="" Margin="10,0"
                                        FontSize="{Binding ActualHeight, ElementName=PART_GreenIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
                                        Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
                                        VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
@@ -136,7 +136,7 @@
                             <Ellipse x:Name="PART_BlueIndicator" 
                                      Fill="Blue" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="2" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center">
+                                     Margin="10,0" VerticalAlignment="Center">
 
                                 <Ellipse.Style>
                                     <Style TargetType="Ellipse">
@@ -161,9 +161,9 @@
                                     </Style>
                                 </Ellipse.Style>
                             </Ellipse>
-                            <Label Content="Blue" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="2"
+                            <Label Content="Blue" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Padding="0"
                                      FontSize="{Binding ActualHeight, ElementName=PART_BlueIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
-                            <TextBlock x:Name="PART_BlueValue"  Text=""
+                            <TextBlock x:Name="PART_BlueValue"  Text="" Margin="10,0"
                                        FontSize="{Binding ActualHeight, ElementName=PART_BlueIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
                                        Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
                                        VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
@@ -171,7 +171,7 @@
                             <Ellipse x:Name="PART_WhiteIndicator" 
                                      Fill="White" Stroke="Black" StrokeThickness="1" 
                                      Grid.Row="3" Grid.Column="0" 
-                                     Margin="2" VerticalAlignment="Center">
+                                     Margin="10,0" VerticalAlignment="Center">
 
                                 <Ellipse.Style>
                                     <Style TargetType="Ellipse">
@@ -196,9 +196,9 @@
                                     </Style>
                                 </Ellipse.Style>
                             </Ellipse>
-                            <Label Content="White" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="2"
+                            <Label Content="White" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,0" Padding="0"
                                      FontSize="{Binding ActualHeight, ElementName=PART_WhiteIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}"/>
-                            <TextBlock x:Name="PART_WhiteValue"  Text=""
+                            <TextBlock x:Name="PART_WhiteValue"  Text="" Margin="10,0"
                                        FontSize="{Binding ActualHeight, ElementName=PART_WhiteIndicator, Converter={StaticResource ValueDivisionConverter}, ConverterParameter=1}" 
                                        Visibility="{TemplateBinding ShowValue, Converter={StaticResource BooleanToVisibilityConverter}}" 
                                        VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
